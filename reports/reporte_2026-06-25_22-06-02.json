@@ -1,0 +1,87 @@
+{
+    "host": "devnetsandboxiosxec8k.cisco.com",
+    "timestamp": "2026-06-25 22:06:02",
+    "informacion_dispositivo": {
+        "version_ios": "17.15.04c",
+        "modelo": "C8000V",
+        "uptime": "1 day, 17 hours, 57 minutes"
+    },
+    "interfaces": [
+        {
+            "interfaz": "GigabitEthernet1",
+            "ip": "10.10.20.148",
+            "estado": "up",
+            "protocolo": "up"
+        },
+        {
+            "interfaz": "GigabitEthernet2",
+            "ip": "10.255.255.1",
+            "estado": "up",
+            "protocolo": "up"
+        },
+        {
+            "interfaz": "GigabitEthernet3",
+            "ip": "unassigned",
+            "estado": "administratively",
+            "protocolo": "down"
+        },
+        {
+            "interfaz": "Loopback1",
+            "ip": "10.1.1.1",
+            "estado": "up",
+            "protocolo": "up"
+        },
+        {
+            "interfaz": "Loopback2",
+            "ip": "10.2.1.1",
+            "estado": "up",
+            "protocolo": "up"
+        },
+        {
+            "interfaz": "Loopback99",
+            "ip": "10.99.1.1",
+            "estado": "up",
+            "protocolo": "up"
+        },
+        {
+            "interfaz": "Loopback100",
+            "ip": "172.16.100.1",
+            "estado": "up",
+            "protocolo": "up"
+        }
+    ],
+    "rutas": [
+        {
+            "tipo": "Estática",
+            "red": "1.2.3.4",
+            "detalle": "is directly connected, Null0"
+        },
+        {
+            "tipo": "Conectada",
+            "red": "10.1.1.0/24",
+            "detalle": "is directly connected, Loopback1"
+        },
+        {
+            "tipo": "Conectada",
+            "red": "10.2.1.0/24",
+            "detalle": "is directly connected, Loopback2"
+        },
+        {
+            "tipo": "Conectada",
+            "red": "10.10.20.0/24",
+            "detalle": "is directly connected, GigabitEthernet1"
+        },
+        {
+            "tipo": "Conectada",
+            "red": "10.99.1.0/24",
+            "detalle": "is directly connected, Loopback99"
+        },
+        {
+            "tipo": "Conectada",
+            "red": "172.16.100.0/24",
+            "detalle": "is directly connected, Loopback100"
+        }
+    ],
+    "vecinos_cdp": [],
+    "archivo_reporte": "reports/reporte_2026-06-25_22-06-02.json"
+}

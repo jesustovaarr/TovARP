@@ -1,0 +1,6 @@
+device:
+  host: "tu-host-aqui"
+  username: "tu-usuario"
+  password: "tu-password"
+  device_type: "cisco_xe"
+  port: 22

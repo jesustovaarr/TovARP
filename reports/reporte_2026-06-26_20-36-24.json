@@ -1,0 +1,43 @@
+{
+    "host": "devnetsandboxiosxec8k.cisco.com",
+    "timestamp": "2026-06-26 20:36:24",
+    "informacion_dispositivo": {
+        "version_ios": "2.0.",
+        "modelo": "C8000V",
+        "uptime": "27 minutes"
+    },
+    "interfaces": [
+        {
+            "interfaz": "GigabitEthernet1",
+            "ip": "10.10.20.148",
+            "estado": "up",
+            "protocolo": "up"
+        },
+        {
+            "interfaz": "GigabitEthernet2",
+            "ip": "unassigned",
+            "estado": "up",
+            "protocolo": "up"
+        },
+        {
+            "interfaz": "GigabitEthernet3",
+            "ip": "unassigned",
+            "estado": "administratively",
+            "protocolo": "down"
+        }
+    ],
+    "rutas": [
+        {
+            "tipo": "EIGRP",
+            "red": "N/A",
+            "detalle": "EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area"
+        },
+        {
+            "tipo": "Conectada",
+            "red": "10.10.20.0/24",
+            "detalle": "is directly connected, GigabitEthernet1"
+        }
+    ],
+    "vecinos_cdp": [],
+    "archivo_reporte": "reports/reporte_2026-06-26_20-36-24.json"
+}
