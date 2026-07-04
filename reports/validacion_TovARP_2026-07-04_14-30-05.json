@@ -1,0 +1,144 @@
+{
+    "dispositivo": "devnetsandboxiosxec8k.cisco.com",
+    "timestamp": "2026-07-04 14:30:05",
+    "comandos_aplicados": [
+        "hostname TovARP",
+        "interface Loopback101",
+        "description TovARP - Router ID OSPF",
+        "ip address 10.10.101.1 255.255.255.255",
+        "no shutdown",
+        "exit",
+        "interface Loopback102",
+        "description TovARP - Servicios Internos",
+        "ip address 10.10.102.1 255.255.255.255",
+        "no shutdown",
+        "exit",
+        "interface GigabitEthernet1",
+        "description Enlace WAN DevNet Principal - TovARP",
+        "exit",
+        "interface GigabitEthernet2",
+        "description Enlace LAN Core - TovARP",
+        "exit",
+        "interface GigabitEthernet3",
+        "description Enlace WAN Respaldo - TovARP",
+        "exit",
+        "access-list 100 permit ip host 10.10.101.1 any",
+        "access-list 100 deny ip any any",
+        "access-list 101 deny icmp any any",
+        "access-list 101 permit ip any any",
+        "ip route 192.168.100.0 255.255.255.0 Null0",
+        "ip route 0.0.0.0 0.0.0.0 10.255.255.2",
+        "router ospf 1",
+        "router-id 10.10.101.1",
+        "network 10.10.0.0 0.0.255.255 area 0",
+        "network 192.168.200.0 0.0.0.255 area 1",
+        "exit"
+    ],
+    "log_configuracion": "configure terminal\nEnter configuration commands, one per line.  End with CNTL/Z.\nCat8kv(config)#hostname TovARP\nTovARP(config)#interface Loopback101\nTovARP(config-if)#description TovARP - Router ID OSPF\nTovARP(config-if)#ip address 10.10.101.1 255.255.255.255\nTovARP(config-if)#no shutdown\nTovARP(config-if)#exit\nTovARP(config)#interface Loopback102\nTovARP(config-if)#description TovARP - Servicios Internos\nTovARP(config-if)#ip address 10.10.102.1 255.255.255.255\nTovARP(config-if)#no shutdown\nTovARP(config-if)#exit\nTovARP(config)#interface GigabitEthernet1\nTovARP(config-if)#description Enlace WAN DevNet Principal - TovARP\nTovARP(config-if)#exit\nTovARP(config)#interface GigabitEthernet2\nTovARP(config-if)#description Enlace LAN Core - TovARP\nTovARP(config-if)#exit\nTovARP(config)#interface GigabitEthernet3\nTovARP(config-if)#description Enlace WAN Respaldo - TovARP\nTovARP(config-if)#exit\nTovARP(config)#access-list 100 permit ip host 10.10.101.1 any\nTovARP(config)#access-list 100 deny ip any any\nTovARP(config)#access-list 101 deny icmp any any\nTovARP(config)#access-list 101 permit ip any any\nTovARP(config)#ip route 192.168.100.0 255.255.255.0 Null0\nTovARP(config)#ip route 0.0.0.0 0.0.0.0 10.255.255.2\nTovARP(config)#router ospf 1\nTovARP(config-router)#router-id 10.10.101.1\nTovARP(config-router)#network 10.10.0.0 0.0.255.255 area 0\nTovARP(config-router)#network 192.168.200.0 0.0.0.255 area 1\nTovARP(config-router)#exit\nTovARP(config)#end\nTovARP#",
+    "estado_final": {
+        "interfaces": [
+            {
+                "interfaz": "GigabitEthernet1",
+                "ip": "10.10.20.148",
+                "estado": "up",
+                "protocolo": "up"
+            },
+            {
+                "interfaz": "GigabitEthernet2",
+                "ip": "unassigned",
+                "estado": "administratively",
+                "protocolo": "down"
+            },
+            {
+                "interfaz": "GigabitEthernet3",
+                "ip": "unassigned",
+                "estado": "administratively",
+                "protocolo": "down"
+            },
+            {
+                "interfaz": "Loopback101",
+                "ip": "10.10.101.1",
+                "estado": "up",
+                "protocolo": "up"
+            },
+            {
+                "interfaz": "Loopback102",
+                "ip": "10.10.102.1",
+                "estado": "up",
+                "protocolo": "up"
+            }
+        ],
+        "rutas": [
+            {
+                "tipo": "EIGRP",
+                "red": "N/A",
+                "detalle": "EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area"
+            },
+            {
+                "tipo": "Conectada",
+                "red": "10.10.20.0/24",
+                "detalle": "is directly connected, GigabitEthernet1"
+            },
+            {
+                "tipo": "Conectada",
+                "red": "10.10.101.1/32",
+                "detalle": "is directly connected, Loopback101"
+            },
+            {
+                "tipo": "Conectada",
+                "red": "10.10.102.1/32",
+                "detalle": "is directly connected, Loopback102"
+            },
+            {
+                "tipo": "Estática",
+                "red": "192.168.100.0/24",
+                "detalle": "is directly connected, Null0"
+            }
+        ],
+        "ospf": [
+            {
+                "interfaz": "Lo101",
+                "pid": "1",
+                "area": "0",
+                "ip": "10.10.101.1/32",
+                "estado": "LOOP"
+            },
+            {
+                "interfaz": "Lo102",
+                "pid": "1",
+                "area": "0",
+                "ip": "10.10.102.1/32",
+                "estado": "LOOP"
+            },
+            {
+                "interfaz": "Gi1",
+                "pid": "1",
+                "area": "0",
+                "ip": "10.10.20.148/24",
+                "estado": "WAIT"
+            }
+        ],
+        "acls": [
+            {
+                "nombre": "Extended IP access list 100",
+                "reglas": [
+                    "10 permit ip host 10.10.101.1 any",
+                    "20 deny ip any any"
+                ]
+            },
+            {
+                "nombre": "Extended IP access list 101",
+                "reglas": [
+                    "10 deny icmp any any",
+                    "20 permit ip any any"
+                ]
+            },
+            {
+                "nombre": "Extended IP access list meraki-fqdn-dns",
+                "reglas": [
+                    "TovARP#"
+                ]
+            }
+        ]
+    }
+}
