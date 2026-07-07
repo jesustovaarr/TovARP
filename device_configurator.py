@@ -124,7 +124,7 @@ def verificar_cambios(conexion):
         if "access list" in linea.lower():
             acl_actual = {"nombre": linea.strip(), "reglas": []}
             acls.append(acl_actual)
-        elif acl_actual and linea.strip():
+        elif acl_actual and linea.strip() and "#" not in linea:
             acl_actual["reglas"].append(linea.strip())
     verificaciones["acls"] = acls
 

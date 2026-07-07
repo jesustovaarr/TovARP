@@ -70,17 +70,16 @@ def obtener_rutas(conexion):
     }
     for linea in salida.splitlines():
         partes = linea.split()
-        if not partes:
+        if not partes or partes[0] not in tipo_map:
             continue
-        codigo = partes[0]
-        if codigo not in tipo_map:
+        red = next((p for p in partes if "." in p and p[0].isdigit()), None)
+        if red is None:
             continue
-        red = next((p for p in partes if "." in p and p[0].isdigit()), "N/A")
-        idx = partes.index(red) if red != "N/A" else 1
+        idx = partes.index(red)
         detalle = " ".join(partes[idx + 1:])
         rutas.append({
-            "tipo": tipo_map[codigo],
-            "red": red,
+            "tipo":    tipo_map[partes[0]],
+            "red":     red,
             "detalle": detalle
         })
     return rutas
