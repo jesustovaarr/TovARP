@@ -4,3 +4,6 @@ device:
   password: "tu-password"
   device_type: "cisco_xe"
   port: 22
+
+monitor:
+  intervalo_segundos: 30

@@ -1,0 +1,16 @@
+[
+    {
+        "timestamp": "2026-07-07 16:53:41",
+        "cambios": [
+            "[INTERFAZ NUEVA] Loopback999 — IP: 10.99.99.1 Estado: up/up",
+            "[RUTA NUEVA] Conectada — 10.99.99.1/32 is directly connected, Loopback999"
+        ]
+    },
+    {
+        "timestamp": "2026-07-07 16:55:48",
+        "cambios": [
+            "[INTERFAZ ELIMINADA] Loopback999",
+            "[RUTA ELIMINADA] Conectada — 10.99.99.1/32"
+        ]
+    }
+]

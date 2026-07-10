@@ -72,9 +72,9 @@ def verificar_cambios(conexion):
         partes = linea.split()
         if len(partes) >= 6:
             interfaces.append({
-                "interfaz":  partes[0],
-                "ip":        partes[1],
-                "estado":    partes[4],
+                "interfaz": partes[0],
+                "ip": partes[1],
+                "estado": partes[4],
                 "protocolo": partes[5]
             })
     verificaciones["interfaces"] = interfaces
@@ -95,8 +95,8 @@ def verificar_cambios(conexion):
         idx = partes.index(red) if red != "N/A" else 1
         detalle = " ".join(partes[idx + 1:])
         rutas.append({
-            "tipo":    tipo_map[partes[0]],
-            "red":     red,
+            "tipo": tipo_map[partes[0]],
+            "red": red,
             "detalle": detalle
         })
     verificaciones["rutas"] = rutas
@@ -109,10 +109,10 @@ def verificar_cambios(conexion):
         if len(partes) >= 7:
             ospf.append({
                 "interfaz": partes[0],
-                "pid":      partes[1],
-                "area":     partes[2],
-                "ip":       partes[3],
-                "estado":   partes[5]
+                "pid": partes[1],
+                "area": partes[2],
+                "ip": partes[3],
+                "estado": partes[5]
             })
     verificaciones["ospf"] = ospf
 

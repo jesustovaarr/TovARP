@@ -52,7 +52,7 @@ def obtener_interfaces(conexion):
         partes = linea.split()
         if len(partes) >= 6:
             interfaces.append({
-                "interfaz":  partes[0],
+                "interfaz": partes[0],
                 "ip": partes[1],
                 "estado": partes[4],
                 "protocolo": partes[5]
